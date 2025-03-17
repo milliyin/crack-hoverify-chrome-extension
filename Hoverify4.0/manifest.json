@@ -1,0 +1,99 @@
+{
+    "action": {
+        "default_icon": {
+            "16": "assets/images/logo_16.png",
+            "32": "assets/images/logo_32.png",
+            "48": "assets/images/logo_48.png",
+            "96": "assets/images/logo_96.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Hoverify"
+    },
+    "background": {
+        "service_worker": "js/bg.js"
+    },
+    "commands": {
+        "assets-toggle": {
+            "description": "Toggle Assets",
+            "suggested_key": {
+                "default": "Alt+A",
+                "mac": "Alt+A"
+            }
+        },
+        "capture-full-page": {
+            "description": "Capture full page screenshot"
+        },
+        "capture-selected-area": {
+            "description": "Capture selected area"
+        },
+        "capture-selected-element": {
+            "description": "Capture selected element"
+        },
+        "capture-tab": {
+            "description": "Capture tab",
+            "suggested_key": {
+                "default": "Alt+C",
+                "mac": "Alt+C"
+            }
+        },
+        "color_eyedropper-toggle": {
+            "description": "Toggle Color Eyedropper",
+            "suggested_key": {
+                "default": "Alt+P",
+                "mac": "Alt+P"
+            }
+        },
+        "inspector-toggle": {
+            "description": "Toggle Inspector",
+            "suggested_key": {
+                "default": "Alt+I",
+                "mac": "Alt+I"
+            }
+        },
+        "responsive-open": {
+            "description": "Open in Responsive Viewer"
+        }
+    },
+    "content_scripts": [{
+        "all_frames": true,
+        "js": ["js/base.js"],
+        "matches": ["https://*/*", "http://*/*", "file:///*"]
+    }, {
+        "js": ["js/cs.js"],
+        "matches": ["https://*/*", "http://*/*", "file:///*"]
+    }, {
+        "js": ["js/builtWith.js"],
+        "matches": ["https://builtwith.com/bot-check?*"]
+    }],
+    "declarative_net_request": {
+        "rule_resources": [{
+            "enabled": true,
+            "id": "ruleset_1",
+            "path": "netRules.json"
+        }]
+    },
+    "default_locale": "en",
+    "description": "Master web development with an all-in-one browser extension that helps you inspect, edit, test, debug, and optimize websites faster.",
+    "homepage_url": "https://tryhoverify.com",
+    "host_permissions": ["\u003Call_urls>", "*://*/*"],
+    "icons": {
+        "128": "assets/images/logo_128.png",
+        "16": "assets/images/logo_16.png",
+        "32": "assets/images/logo_32.png",
+        "48": "assets/images/logo_48.png",
+        "96": "assets/images/logo_96.png"
+    },
+    "incognito": "split",
+    "manifest_version": 3,
+    "minimum_chrome_version": "88",
+    "name": "Hoverifyyy: All-in-one extension for web developers, by milliyin",
+    "permissions": ["tabs", "scripting", "storage", "unlimitedStorage", "browsingData", "contextMenus", "downloads", "webNavigation", "declarativeNetRequest", "declarativeNetRequestFeedback", "declarativeNetRequestWithHostAccess", "clipboardWrite"],
+    "short_name": "Hoverifyyyy",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "4.3.2",
+    "version_name": "4.3.2",
+    "web_accessible_resources": [{
+        "matches": ["\u003Call_urls>"],
+        "resources": ["styles/*", "assets/*", "vendors/*"]
+    }]
+}
